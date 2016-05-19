@@ -16,8 +16,6 @@
  */
 /* No user fns here.  Pesch 15apr92. */
 
-#include <mcu/debug.h>
-
 #include <_ansi.h>
 #include <reent.h>
 #include <stdio.h>
