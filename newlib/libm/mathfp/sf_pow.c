@@ -14,7 +14,7 @@ float powf (float x, float y)
 
   k = modff (y, &d);
 
-  if (k == 0.0) 
+  if (k == 0.0f)
     {
       /* Exponent y is an integer. */
       if (modff (ldexpf (y, -1), &t))
@@ -29,9 +29,9 @@ float powf (float x, float y)
         }
     }
 
-  if (x == 0.0)
+  if (x == 0.0f)
     {
-      if (y <= 0.0)
+      if (y <= 0.0f)
         errno = EDOM;
     }
   else if ((t = y * log (fabsf (x))) >= BIGX) 
@@ -44,7 +44,7 @@ float powf (float x, float y)
             {
               /* y is not an integer. */
               errno = EDOM;
-              x = 0.0;
+              x = 0.0f;
             }
           else if (exponent_is_even_int)
             x = z_infinity_f.f;
@@ -59,7 +59,7 @@ float powf (float x, float y)
   else if (t < SMALLX)
     {
       errno = ERANGE;
-      x = 0.0;
+      x = 0.0f;
     }
   else 
     {
@@ -79,7 +79,7 @@ float powf (float x, float y)
             }
 
           if (sign)
-            r = 1.0 / r;
+            r = 1.0f / r;
 
           return r;
         }
@@ -92,7 +92,7 @@ float powf (float x, float y)
                 {
                   /* y is not an integer. */
                   errno = EDOM;
-                  return 0.0;
+                  return 0.0f;
                 }
             }
 
