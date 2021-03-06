@@ -31,6 +31,7 @@ struct stat {
 	time_t	st_ctime;
 	long		st_blksize;
 	long		st_blocks;
+  long    st_nlink;
 };
 #else
 #ifdef __CYGWIN__
